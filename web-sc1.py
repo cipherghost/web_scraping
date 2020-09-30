@@ -17,3 +17,5 @@ for a in soup.findAll('a',href=True, attrs={'class':'_2WNbFM'}):
    products.append(name.text)
    prices.append(price.text)
    ratings.append(rating.text) 
+df = pd.DataFrame({'Product Name':products,'Price':prices,'Rating':ratings}) 
+df.to_csv('products.csv', index=False, encoding='utf-8')
